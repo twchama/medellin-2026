@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medellín — March 30 – April 2, 2026</title>
+<meta name="description" content="A curated travel experience in the City of Eternal Spring">
+<meta property="og:title" content="Medellín 2026 — A Curated Experience">
+<meta property="og:description" content="Four days of coffee, color, culture & celebration">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:#C4A265;color:#1C1C1C}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:#1C1C1C;color:#FAF6F0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ===== ANIMATIONS ===== */
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes breathe{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes expandLine{from{width:0}to{width:80px}}
+@keyframes floatIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+.fade-in{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;text-align:center;padding:40px 24px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,#2D5016 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,#1A3A4A 0%,transparent 50%),#1C1C1C;opacity:.6}
+.hero-pattern{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4A265' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");opacity:.5}
+.hero-content{position:relative;z-index:1;animation:slideUp 1.2s ease forwards}
+.hero-tag{font-family:'Outfit',sans-serif;font-size:12px;letter-spacing:6px;text-transform:uppercase;color:#C4A265;margin-bottom:32px;animation:fadeIn 1s ease .3s both}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(52px,13vw,130px);font-weight:900;line-height:.9;letter-spacing:-3px;margin-bottom:24px;background:linear-gradient(135deg,#FAF6F0 0%,#C4A265 50%,#FAF6F0 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+.hero-line{width:80px;height:2px;background:#C4A265;margin:0 auto 24px;animation:expandLine .8s ease .6s both}
+.hero-date{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,32px);font-style:italic;font-weight:400;line-height:1.4;max-width:600;margin:0 auto 16px;opacity:.8;animation:fadeIn 1s ease .8s both}
+.hero-sub{font-family:'Outfit',sans-serif;font-size:clamp(14px,2.5vw,18px);font-weight:300;letter-spacing:1px;max-width:500;margin:0 auto;opacity:.5;animation:fadeIn 1s ease 1s both}
+.scroll-hint{position:absolute;bottom:40px;animation:breathe 2s ease-in-out infinite;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint p{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:.4}
+.scroll-hint-line{width:1px;height:40px;background:linear-gradient(180deg,#C4A265,transparent)}
+
+/* ===== SHARED ===== */
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.section-tag{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#C4A265;margin-bottom:16px}
+.section-title{font-family:'Playfair Display',serif;font-weight:700;line-height:1.1}
+
+/* ===== OVERVIEW ===== */
+.overview{background:#FAF6F0;color:#1C1C1C;padding:80px 24px;text-align:center}
+.overview h2{font-size:clamp(28px,5vw,44px);max-width:700;margin:0 auto 40px}
+.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;max-width:900;margin:0 auto}
+.overview-card{padding:28px;background:rgba(0,0,0,.03);border-radius:16px;border:1px solid rgba(0,0,0,.06)}
+.overview-card .icon{font-size:32px;display:block;margin-bottom:12px}
+.overview-card .label{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:.5;margin-bottom:8px}
+.overview-card .value{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;line-height:1.5;white-space:pre-line}
+
+/* ===== RAIN NOTE ===== */
+.rain-note{background:#1C1C1C;padding:60px 24px;text-align:center}
+.rain-card{max-width:700;margin:0 auto;padding:36px;border-radius:20px;border:1px solid rgba(196,162,101,.2);background:linear-gradient(135deg,rgba(196,162,101,.05),rgba(45,80,22,.05))}
+.rain-card p.body{font-family:'Playfair Display',serif;font-size:clamp(16px,2.5vw,22px);font-style:italic;line-height:1.7;opacity:.8}
+
+/* ===== DAY SECTIONS ===== */
+.day-section{padding:80px 0;position:relative;overflow:hidden}
+.day-section.light{background:#FAF6F0;color:#1C1C1C}
+.day-section.dark{background:#1C1C1C;color:#FAF6F0}
+.day-bar{position:absolute;top:0;left:0;width:100%;height:4px}
+.day-header{display:flex;align-items:baseline;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.day-num{font-family:'Playfair Display',serif;font-size:clamp(64px,10vw,100px);font-weight:900;line-height:1;opacity:.25}
+.day-date{font-family:'Outfit',sans-serif;font-size:13px;letter-spacing:4px;text-transform:uppercase;opacity:.6;margin-bottom:4px}
+.day-title{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,48px);font-weight:700;line-height:1.1}
+.day-subtitle{font-family:'Playfair Display',serif;font-size:clamp(18px,3vw,26px);font-style:italic;opacity:.7;margin-bottom:40px;margin-top:8px}
+
+/* Cards */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px;margin-bottom:48px}
+.card{border-radius:16px;padding:28px}
+.card.light-bg{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.08)}
+.card.dark-bg{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.card-label{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:.5;margin-bottom:16px}
+.card-label.sm{margin-bottom:8px}
+
+/* Weather */
+.weather-row{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.weather-icon{font-size:40px}
+.weather-temp{font-family:'Playfair Display',serif;font-size:28px;font-weight:700}
+.weather-low{font-family:'Outfit',sans-serif;font-size:13px;opacity:.6}
+.weather-cond{font-family:'Outfit',sans-serif;font-size:15px;opacity:.8}
+.rain-badge{margin-top:12px;padding:8px 14px;border-radius:8px;display:inline-block;font-family:'Outfit',sans-serif;font-size:13px;font-weight:600}
+
+/* Outfit */
+.outfit-vibe{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:12px}
+.outfit-text{font-family:'Outfit',sans-serif;font-size:14px;line-height:1.7;opacity:.8;margin-bottom:6px}
+.palette-label{font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:.5;margin-top:16px;margin-bottom:8px}
+.palette{display:flex;gap:8px}
+.swatch{width:32px;height:32px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.swatch.white{border:1px solid #ccc}
+
+/* Timeline */
+.timeline{position:relative;padding-left:28px}
+.timeline-line{position:absolute;left:6px;top:0;bottom:0;width:2px}
+.timeline-item{margin-bottom:28px;position:relative}
+.timeline-dot{position:absolute;left:-25px;top:6px;width:14px;height:14px;border-radius:50%;border-width:3px;border-style:solid}
+.timeline-time{font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.timeline-event{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:4px}
+.timeline-detail{font-family:'Outfit',sans-serif;font-size:14px;line-height:1.6;opacity:.7}
+
+/* Photo Spots */
+.photos-card{margin-top:48px}
+.photo-spot{margin-bottom:20px;padding-bottom:20px}
+.photo-spot:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none!important}
+.photo-spot-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;margin-bottom:4px}
+.photo-spot-tip{font-family:'Outfit',sans-serif;font-size:14px;line-height:1.6;opacity:.7}
+
+/* ===== PACKING ===== */
+.packing{background:#FAF6F0;color:#1C1C1C;padding:80px 24px;text-align:center}
+.packing h2{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;margin-bottom:40px}
+.packing-list{max-width:600;margin:0 auto;text-align:left}
+.packing-item{display:flex;align-items:center;gap:16px;padding:16px 0}
+.packing-item:not(:last-child){border-bottom:1px solid rgba(0,0,0,.08)}
+.packing-check{width:28px;height:28px;border-radius:50%;border:2px solid #C4A265;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:12px;color:#C4A265;font-weight:600}
+.packing-item p{font-family:'Outfit',sans-serif;font-size:16px;line-height:1.5}
+
+/* ===== CLOSING ===== */
+.closing{background:#1C1C1C;padding:100px 24px;text-align:center;position:relative}
+.closing-glow{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(196,162,101,.08) 0%,transparent 70%)}
+.closing-inner{position:relative;z-index:1}
+.closing h2{font-family:'Playfair Display',serif;font-size:clamp(32px,7vw,64px);font-weight:900;line-height:1.1;margin-bottom:24px;background:linear-gradient(135deg,#FAF6F0,#C4A265);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.closing-line{width:60px;height:2px;background:#C4A265;margin:0 auto 28px}
+.closing-sub{font-family:'Playfair Display',serif;font-size:clamp(16px,2.5vw,20px);font-style:italic;opacity:.5;max-width:400;margin:0 auto}
+
+/* Footer */
+footer{background:#141414;padding:32px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
+footer p{font-family:'Outfit',sans-serif;font-size:12px;letter-spacing:2px;text-transform:uppercase;opacity:.3}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:600px){
+  .card-grid{grid-template-columns:1fr}
+  .overview-grid{grid-template-columns:1fr 1fr}
+  .day-header{gap:12px}
+  .hero{padding:40px 16px}
+  .route-map{height:350px!important}
+}
+
+/* ===== ROUTE MAPS ===== */
+.route-map-wrap{margin-top:48px}
+.route-map{height:420px;border-radius:16px;overflow:hidden;border:2px solid rgba(196,162,101,.25)}
+.route-map iframe{width:100%;height:100%;border:0;display:block}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-tag">A Curated Experience</p>
+    <h1 class="hero-title">Medellín</h1>
+    <div class="hero-line"></div>
+    <p class="hero-date">March 30 — April 2, 2026</p>
+    <p class="hero-sub">Four days of coffee, color, culture &amp; celebration in the City of Eternal Spring</p>
+  </div>
+  <div class="scroll-hint">
+    <p>Scroll</p>
+    <div class="scroll-hint-line"></div>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW ===== -->
+<section class="overview">
+  <div class="container" style="text-align:center">
+    <p class="section-tag fade-in">The Essentials</p>
+    <h2 class="section-title fade-in" style="font-size:clamp(28px,5vw,44px);max-width:700;margin:0 auto 40px">Everything You Need,<br><em>Nothing You Don't</em></h2>
+    <div class="overview-grid">
+      <div class="overview-card fade-in"><span class="icon">✈️</span><p class="label">Flights</p><p class="value">Avianca Nonstop
+JFK ↔ MDE</p></div>
+      <div class="overview-card fade-in"><span class="icon">🏨</span><p class="label">Hotel</p><p class="value">Heiss Hotel by Jalo
+El Poblado — Balcony Room</p></div>
+      <div class="overview-card fade-in"><span class="icon">☕</span><p class="label">Coffee Tour</p><p class="value">Camantours
+Tue, Mar 31 at 9am</p></div>
+      <div class="overview-card fade-in"><span class="icon">🎂</span><p class="label">Birthday Trip</p><p class="value">Private Guatapé Tour
+Wed, Apr 1</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RAIN NOTE ===== -->
+<section class="rain-note">
+  <div class="rain-card fade-in">
+    <p class="section-tag" style="margin-bottom:16px">🌿 Rainy Season, Baby</p>
+    <p class="body">Late March is the start of rainy season in Medellín. Expect sunny mornings and dramatic afternoon showers that pass quickly. We built this itinerary around that rhythm — outdoors early, restaurants and covered spots in the afternoon. Pack a compact umbrella, a light rain jacket, and an adventurous spirit. The lush greens and misty mountains after a shower are breathtaking.</p>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DAY 1 -->
+<!-- ============================================================ -->
+<section class="day-section light">
+  <div class="day-bar" style="background:linear-gradient(90deg,#2D5016,#C4A265)"></div>
+  <div class="container">
+    <div class="fade-in">
+      <div class="day-header">
+        <span class="day-num" style="color:#C4A265">01</span>
+        <div>
+          <p class="day-date">Mon, Mar 30</p>
+          <h2 class="day-title">Arrival</h2>
+        </div>
+      </div>
+      <p class="day-subtitle">Touch Down in the City of Eternal Spring</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card light-bg fade-in">
+        <p class="card-label">Weather</p>
+        <div class="weather-row">
+          <span class="weather-icon">🌤️</span>
+          <div><p class="weather-temp">72°F</p><p class="weather-low">Low 62°F</p></div>
+        </div>
+        <p class="weather-cond">Partly Cloudy</p>
+        <div class="rain-badge" style="background:#C4A26522;color:#C4A265">🌧 60% chance of rain</div>
+      </div>
+      <div class="card light-bg fade-in">
+        <p class="card-label sm">Outfit Direction</p>
+        <p class="outfit-vibe" style="color:#C4A265">Effortless Travel Chic</p>
+        <p class="outfit-text"><strong>Her:</strong> Linen wide-leg pants in cream or olive, a fitted bodysuit, gold layered necklaces, comfortable block-heel sandals, oversized sunglasses. Bring a light rain jacket in terracotta or khaki.</p>
+        <p class="outfit-text"><strong>Him:</strong> Relaxed-fit chinos in stone, a camp collar shirt in sage or cream, clean white sneakers, a gold watch, aviator sunglasses. Pack a lightweight bomber for evening.</p>
+        <p class="palette-label">Today's Palette</p>
+        <div class="palette">
+          <div class="swatch" style="background:#F5EAD0;border:1px solid #ccc"></div>
+          <div class="swatch" style="background:#6B7F5B"></div>
+          <div class="swatch" style="background:#C4A265"></div>
+          <div class="swatch" style="background:#8B6F47"></div>
+          <div class="swatch white" style="background:#FFFFFF"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="card-label fade-in" style="margin-bottom:24px">The Itinerary</p>
+    <div class="timeline">
+      <div class="timeline-line" style="background:linear-gradient(180deg,#C4A265,transparent)"></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#C4A265;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#C4A265">11:20 AM</p><p class="timeline-event">Land at MDE Airport</p><p class="timeline-detail">Avianca 43 from JFK. Grab an Uber to El Poblado (~45 min).</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#C4A265;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#C4A265">12:30 PM</p><p class="timeline-event">Lunch at Mondongo's</p><p class="timeline-detail">Classic Colombian — order the bandeja paisa and fresh fruit juice. Huge portions, share everything.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#C4A265;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#C4A265">3:00 PM</p><p class="timeline-event">Check into Heiss Hotel</p><p class="timeline-detail">Double Room with Balcony. Hit the rooftop pool, explore the spa.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#C4A265;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#C4A265">5:00 PM</p><p class="timeline-event">Stroll Through Provenza</p><p class="timeline-detail">Window shop the boutiques on Carrera 35, grab espresso, feel the neighborhood.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#C4A265;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#C4A265">7:00 PM</p><p class="timeline-event">Dinner at Carmen</p><p class="timeline-detail">One of Latin America's Top 50 Restaurants. Le Cordon Bleu–trained chefs. Try the ceviche and the pez palma.</p></div>
+    </div>
+
+    <div class="card light-bg photos-card fade-in">
+      <p class="card-label">📸 Where to Shoot</p>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(0,0,0,.08)"><p class="photo-spot-name">Provenza Street Murals</p><p class="photo-spot-tip">The "Calles de Medellín" mural on Carrera 43C between Calles 8–9. Golden hour light hits perfectly around 5pm.</p></div>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(0,0,0,.08)"><p class="photo-spot-name">Heiss Hotel Rooftop Pool</p><p class="photo-spot-tip">Sunset reflections on the water with the mountain backdrop. Swimwear moment.</p></div>
+      <div class="photo-spot"><p class="photo-spot-name">Carmen's Garden Patio</p><p class="photo-spot-tip">The back garden dining area with string lights and lush plants. Candlelit and intimate.</p></div>
+    </div>
+
+    <div class="route-map-wrap fade-in">
+      <p class="card-label" style="margin-bottom:16px">🗺 Today's Route</p>
+      <div id="map-day1" class="route-map">
+        <iframe src="https://www.google.com/maps/dir/Jos%C3%A9+Mar%C3%ADa+C%C3%B3rdova+International+Airport/Restaurante+Mondongo's+El+Poblado,+Medell%C3%ADn/Heiss+Hotel,+Medell%C3%ADn/Provenza,+Medell%C3%ADn/Carmen+Medell%C3%ADn/@6.2115,-75.5685,14z" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DAY 2 -->
+<!-- ============================================================ -->
+<section class="day-section dark">
+  <div class="day-bar" style="background:linear-gradient(90deg,#5C3D2E,#D4A76A)"></div>
+  <div class="container">
+    <div class="fade-in">
+      <div class="day-header">
+        <span class="day-num" style="color:#D4A76A">02</span>
+        <div>
+          <p class="day-date">Tue, Mar 31</p>
+          <h2 class="day-title">The Coffee Farm</h2>
+        </div>
+      </div>
+      <p class="day-subtitle">From Bean to Cup in the Colombian Highlands</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card dark-bg fade-in">
+        <p class="card-label">Weather</p>
+        <div class="weather-row">
+          <span class="weather-icon">⛅</span>
+          <div><p class="weather-temp">71°F</p><p class="weather-low">Low 61°F</p></div>
+        </div>
+        <p class="weather-cond">Sun &amp; Showers</p>
+        <div class="rain-badge" style="background:#D4A76A22;color:#D4A76A">🌧 50% chance of rain</div>
+      </div>
+      <div class="card dark-bg fade-in">
+        <p class="card-label sm">Outfit Direction</p>
+        <p class="outfit-vibe" style="color:#D4A76A">Highland Explorer</p>
+        <p class="outfit-text"><strong>Her:</strong> High-waisted cargo joggers or utility pants, a tucked-in white tee, a structured straw hat, trail-ready sneakers in earth tones, gold hoops. Layer a rain-resistant anorak.</p>
+        <p class="outfit-text"><strong>Him:</strong> Slim joggers in olive, a Henley in oatmeal, hiking-style sneakers, a canvas bucket hat, a crossbody bag. Bring a packable rain shell.</p>
+        <p class="palette-label">Today's Palette</p>
+        <div class="palette">
+          <div class="swatch" style="background:#5C3D2E"></div>
+          <div class="swatch" style="background:#D4A76A"></div>
+          <div class="swatch" style="background:#F5EAD0;border:1px solid rgba(255,255,255,.2)"></div>
+          <div class="swatch" style="background:#6B7F5B"></div>
+          <div class="swatch" style="background:#3A3A3A"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="card-label fade-in" style="margin-bottom:24px">The Itinerary</p>
+    <div class="timeline">
+      <div class="timeline-line" style="background:linear-gradient(180deg,#D4A76A,transparent)"></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4A76A;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4A76A">8:30 AM</p><p class="timeline-event">Coffee Tour Pickup at Heiss</p><p class="timeline-detail">Camantours — private transport, bilingual guide. Already booked ($270 for 2).</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4A76A;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4A76A">10:00 AM</p><p class="timeline-event">Coffee Farm Experience</p><p class="timeline-detail">Walk the plantation, learn the harvest process, taste 5 different roasts. Cold brew tasting included.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4A76A;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4A76A">1:00 PM</p><p class="timeline-event">Farm Lunch</p><p class="timeline-detail">Traditional Antioquian lunch at the farm. Fresh, local, unforgettable.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4A76A;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4A76A">3:00 PM</p><p class="timeline-event">Return to Heiss</p><p class="timeline-detail">Pool time. Rest. Recharge.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4A76A;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4A76A">7:30 PM</p><p class="timeline-event">Dinner at Alambique</p><p class="timeline-detail">Hidden jungle-themed restaurant. Share plates — portions are massive. Try cocktails made with Viche, a Colombian ancestral liquor.</p></div>
+    </div>
+
+    <div class="card dark-bg photos-card fade-in">
+      <p class="card-label">📸 Where to Shoot</p>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(255,255,255,.08)"><p class="photo-spot-name">Coffee Farm Terraces</p><p class="photo-spot-tip">The rows of coffee plants with misty mountain backdrop. Morning light creates a dreamy atmosphere.</p></div>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(255,255,255,.08)"><p class="photo-spot-name">Bean-to-Cup Process</p><p class="photo-spot-tip">Hands holding fresh coffee cherries, the drying tables — textures and warm tones everywhere.</p></div>
+      <div class="photo-spot"><p class="photo-spot-name">Alambique Interior</p><p class="photo-spot-tip">Three levels of jungle-themed decor. The rooftop terrace at golden hour is stunning.</p></div>
+    </div>
+
+    <div class="route-map-wrap fade-in">
+      <p class="card-label" style="margin-bottom:16px">🗺 Today's Route</p>
+      <div id="map-day2" class="route-map">
+        <iframe src="https://www.google.com/maps/dir/Heiss+Hotel,+Medell%C3%ADn/San+Sebasti%C3%A1n+de+Palmitas,+Medell%C3%ADn/Heiss+Hotel,+Medell%C3%ADn/Alambique,+Cl+10,+El+Poblado,+Medell%C3%ADn/@6.19,-75.55,12z" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DAY 3 — BIRTHDAY -->
+<!-- ============================================================ -->
+<section class="day-section light">
+  <div class="day-bar" style="background:linear-gradient(90deg,#1A3A4A,#E8B84B)"></div>
+  <div class="container">
+    <div class="fade-in">
+      <div class="day-header">
+        <span class="day-num" style="color:#E8B84B">03</span>
+        <div>
+          <p class="day-date">Wed, Apr 1</p>
+          <h2 class="day-title">Birthday in Guatapé</h2>
+        </div>
+      </div>
+      <p class="day-subtitle">740 Steps to the Top of the World ✨</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card light-bg fade-in">
+        <p class="card-label">Weather</p>
+        <div class="weather-row">
+          <span class="weather-icon">⛅</span>
+          <div><p class="weather-temp">73°F</p><p class="weather-low">Low 60°F</p></div>
+        </div>
+        <p class="weather-cond">Morning Sun, PM Showers</p>
+        <div class="rain-badge" style="background:#E8B84B22;color:#B8922E">🌧 65% chance of rain</div>
+      </div>
+      <div class="card light-bg fade-in">
+        <p class="card-label sm">Outfit Direction</p>
+        <p class="outfit-vibe" style="color:#E8B84B">Birthday Adventure Glow</p>
+        <p class="outfit-text"><strong>Her:</strong> Bike shorts or stretch leggings for the climb, a vibrant printed crop top or bralette layered under an oversized linen button-down (tied at the waist for photos at the top), platform sneakers, statement sunglasses, gold ear cuffs.</p>
+        <p class="outfit-text"><strong>Him:</strong> Athletic shorts or stretch chinos, a fitted tee in a bold color (cobalt, terracotta, or gold), clean sneakers with grip, a cap, polarized sunglasses. Bring the camera.</p>
+        <p class="palette-label">Today's Palette</p>
+        <div class="palette">
+          <div class="swatch" style="background:#E8B84B"></div>
+          <div class="swatch" style="background:#1A3A4A"></div>
+          <div class="swatch" style="background:#E85D3A"></div>
+          <div class="swatch white" style="background:#FFFFFF"></div>
+          <div class="swatch" style="background:#2D8B6F"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="card-label fade-in" style="margin-bottom:24px">The Itinerary</p>
+    <div class="timeline">
+      <div class="timeline-line" style="background:linear-gradient(180deg,#E8B84B,transparent)"></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#E8B84B;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#E8B84B">7:00 AM</p><p class="timeline-event">Hotel Pickup — Guatapé Bound</p><p class="timeline-detail">Private tour via Medellin Day Trips. ~2 hour scenic drive through the Andes.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#E8B84B;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#E8B84B">9:30 AM</p><p class="timeline-event">El Peñol Rock</p><p class="timeline-detail">740 steps to a 360° panoramic view over emerald lakes and islands. Non-negotiable.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#E8B84B;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#E8B84B">11:30 AM</p><p class="timeline-event">Exotic Fruit Tasting</p><p class="timeline-detail">Try fruits you've never seen — lulo, guanábana, pitahaya, maracuyá.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#E8B84B;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#E8B84B">12:30 PM</p><p class="timeline-event">Birthday Lunch 🎂</p><p class="timeline-detail">Traditional restaurant overlooking the reservoir. Trout, bandeja paisa, or grilled chicken with patacones.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#E8B84B;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#E8B84B">2:00 PM</p><p class="timeline-event">Boat Ride on the Reservoir</p><p class="timeline-detail">Scenic cruise past Pablo Escobar's former Hacienda La Manuela. Water, islands, mountains.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#E8B84B;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#E8B84B">3:30 PM</p><p class="timeline-event">Guatapé Town</p><p class="timeline-detail">Stroll the colorful zócalo streets. Every building tells a story in carved, painted panels.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#E8B84B;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#E8B84B">6:00 PM</p><p class="timeline-event">Return to Medellín</p><p class="timeline-detail">Rest, get ready for birthday dinner.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#E8B84B;border-color:#FAF6F0"></div><p class="timeline-time" style="color:#E8B84B">7:30 PM</p><p class="timeline-event">Birthday Dinner at Ritwal</p><p class="timeline-detail">Mountain-perched wooden casitas. Panoramic city views. Mediterranean-Colombian fusion. Bring a layer — it's cooler up high.</p></div>
+    </div>
+
+    <div class="card light-bg photos-card fade-in">
+      <p class="card-label">📸 Where to Shoot</p>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(0,0,0,.08)"><p class="photo-spot-name">El Peñol Summit</p><p class="photo-spot-tip">THE shot. The zigzag staircase from below, then the turquoise reservoir panorama from the top. Go early before clouds roll in.</p></div>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(0,0,0,.08)"><p class="photo-spot-name">Guatapé Colorful Steps</p><p class="photo-spot-tip">The central plaza's painted cascading steps — the most iconic Instagram spot in the region. Sit on the steps in a bold outfit.</p></div>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(0,0,0,.08)"><p class="photo-spot-name">Zócalo Streets</p><p class="photo-spot-tip">Every house has hand-carved, brightly painted panels. Walk the quieter side streets for less crowded compositions.</p></div>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(0,0,0,.08)"><p class="photo-spot-name">Boat on the Reservoir</p><p class="photo-spot-tip">Golden hour reflections, islands in the background. The front of the boat with wind in your hair.</p></div>
+      <div class="photo-spot"><p class="photo-spot-name">Ritwal at Night</p><p class="photo-spot-tip">City lights stretching across the valley below. The wooden casita tables with candles. A birthday moment.</p></div>
+    </div>
+
+    <div class="route-map-wrap fade-in">
+      <p class="card-label" style="margin-bottom:16px">🗺 Today's Route</p>
+      <div id="map-day3" class="route-map">
+        <iframe src="https://www.google.com/maps/dir/Heiss+Hotel,+Medell%C3%ADn/Marinilla,+Antioquia/Piedra+del+Pe%C3%B1ol,+Guatap%C3%A9/Embalse+Pe%C3%B1ol+Guatap%C3%A9/Guatap%C3%A9,+Antioquia/RITWAL+mesa+%26+m%C3%ADstica,+Medell%C3%ADn/@6.19,-75.38,10z" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- DAY 4 -->
+<!-- ============================================================ -->
+<section class="day-section dark">
+  <div class="day-bar" style="background:linear-gradient(90deg,#3D1C3A,#D4766C)"></div>
+  <div class="container">
+    <div class="fade-in">
+      <div class="day-header">
+        <span class="day-num" style="color:#D4766C">04</span>
+        <div>
+          <p class="day-date">Thu, Apr 2</p>
+          <h2 class="day-title">The Grand Finale</h2>
+        </div>
+      </div>
+      <p class="day-subtitle">MetroCable Views &amp; One Last Dance with the City</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card dark-bg fade-in">
+        <p class="card-label">Weather</p>
+        <div class="weather-row">
+          <span class="weather-icon">☁️</span>
+          <div><p class="weather-temp">72°F</p><p class="weather-low">Low 61°F</p></div>
+        </div>
+        <p class="weather-cond">Mostly Cloudy</p>
+        <div class="rain-badge" style="background:#D4766C22;color:#D4766C">🌧 55% chance of rain</div>
+      </div>
+      <div class="card dark-bg fade-in">
+        <p class="card-label sm">Outfit Direction</p>
+        <p class="outfit-vibe" style="color:#D4766C">Polished Departure Energy</p>
+        <p class="outfit-text"><strong>Her:</strong> A flowy midi dress in rust or terracotta, strappy sandals you can walk in, a crossbody bag, layered bracelets, a silk headscarf or knotted bandana. Transition-ready for airport elegance.</p>
+        <p class="outfit-text"><strong>Him:</strong> Tailored joggers or pressed chinos, a fitted polo or mock neck in deep green or burgundy, loafers or elevated sneakers, a structured bag. Flight-ready but sharp.</p>
+        <p class="palette-label">Today's Palette</p>
+        <div class="palette">
+          <div class="swatch" style="background:#D4766C"></div>
+          <div class="swatch" style="background:#3D1C3A"></div>
+          <div class="swatch" style="background:#F5EAD0;border:1px solid rgba(255,255,255,.2)"></div>
+          <div class="swatch" style="background:#8B6F47"></div>
+          <div class="swatch" style="background:#2D5016"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="card-label fade-in" style="margin-bottom:24px">The Itinerary</p>
+    <div class="timeline">
+      <div class="timeline-line" style="background:linear-gradient(180deg,#D4766C,transparent)"></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4766C;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4766C">8:00 AM</p><p class="timeline-event">City Tour + MetroCable Pickup</p><p class="timeline-detail">Private English-speaking guide. Hotel pickup.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4766C;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4766C">8:30 AM</p><p class="timeline-event">Plaza Botero</p><p class="timeline-detail">23 bronze Botero sculptures. Rub one for good luck. Visit the Museum of Antioquia if time allows.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4766C;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4766C">9:30 AM</p><p class="timeline-event">Downtown Walking Tour</p><p class="timeline-detail">Colonial churches, Barefoot Park, the transformation story of Medellín.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4766C;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4766C">10:30 AM</p><p class="timeline-event">MetroCable Gondola Ride</p><p class="timeline-detail">Soar over the valley to Santo Domingo. Misty mountains, rainbows after showers, lush green canopy below.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4766C;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4766C">12:00 PM</p><p class="timeline-event">Return to Heiss — Grab Bags</p><p class="timeline-detail">Bags held at front desk. Quick change if needed.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4766C;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4766C">12:30 PM</p><p class="timeline-event">Last Lunch at La Causa</p><p class="timeline-detail">Peruvian-Asian fusion. 5 min walk from hotel. The ceviche is a must.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4766C;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4766C">4:30 PM</p><p class="timeline-event">Uber to MDE Airport</p><p class="timeline-detail">~45 minutes to José María Córdova International.</p></div>
+      <div class="timeline-item fade-in"><div class="timeline-dot" style="background:#D4766C;border-color:#1C1C1C"></div><p class="timeline-time" style="color:#D4766C">8:00 PM</p><p class="timeline-event">Fly Home — Avianca 152</p><p class="timeline-detail">MDE → JFK. Arrives 2:40am Friday. Window seats: 23K and 23E.</p></div>
+    </div>
+
+    <div class="card dark-bg fade-in" style="margin-top:32px;margin-bottom:32px;border-left:3px solid #D4766C">
+      <p class="card-label" style="margin-bottom:12px">🧳 Where to Drop Your Bags</p>
+      <p style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:16px">Check out at noon, fly at 8pm — here's how to stay free all day:</p>
+
+      <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08)">
+        <p style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#D4766C;margin-bottom:4px">Option 1 — Heiss Hotel Front Desk (Free) ✦ Best Bet</p>
+        <p style="font-family:'Outfit',sans-serif;font-size:14px;line-height:1.6;opacity:.8">Ask the front desk when you check in on Day 1 to confirm they'll hold bags after checkout. Most El Poblado hotels do this for free. Swing back after the city tour, grab bags, Uber to MDE.</p>
+      </div>
+
+      <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08)">
+        <p style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#D4766C;margin-bottom:4px">Option 2 — Bounce App (~$3.50/bag) ✦ Backup</p>
+        <p style="font-family:'Outfit',sans-serif;font-size:14px;line-height:1.6;opacity:.8">Bounce partner at <strong>Selina Hostel</strong>, 7 min from Parque Lleras in El Poblado. Locked room, bags sealed with zip ties, $10K insurance. Book via <a href="https://bounce.com/city/medellin/poblado-station" target="_blank" style="color:#D4766C;text-decoration:underline">bounce.com</a> — pay with card, no cash needed.</p>
+      </div>
+
+      <div style="margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08)">
+        <p style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#D4766C;margin-bottom:4px">Option 3 — LuggageHero (~$1.49/hr) ✦ Pay by the Hour</p>
+        <p style="font-family:'Outfit',sans-serif;font-size:14px;line-height:1.6;opacity:.8">Only service with hourly rates in Medellín. Verified spots near Poblado Metro. Book at <a href="https://luggagehero.com/medellin/" target="_blank" style="color:#D4766C;text-decoration:underline">luggagehero.com</a></p>
+      </div>
+
+      <div>
+        <p style="font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:#D4766C;margin-bottom:4px">⚠️ MDE Airport Has No Luggage Storage</p>
+        <p style="font-family:'Outfit',sans-serif;font-size:14px;line-height:1.6;opacity:.8">José María Córdova International has no storage. Handle bags in El Poblado before heading out.</p>
+      </div>
+    </div>
+
+    <div class="card dark-bg photos-card fade-in">
+      <p class="card-label">📸 Where to Shoot</p>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(255,255,255,.08)"><p class="photo-spot-name">Plaza Botero Sculptures</p><p class="photo-spot-tip">The voluminous bronze "Mano" (Hand) and "Maternidad" sculptures. Stand beside them for scale — dramatic and fun.</p></div>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(255,255,255,.08)"><p class="photo-spot-name">The Peace Doves</p><p class="photo-spot-tip">Two side-by-side dove statues — one bombed, one rebuilt. Powerful symbolism of Medellín's rebirth.</p></div>
+      <div class="photo-spot" style="border-bottom:1px solid rgba(255,255,255,.08)"><p class="photo-spot-name">MetroCable Gondola</p><p class="photo-spot-tip">Shoot through the glass as you rise above the rooftops. Misty mornings create ethereal, magical shots.</p></div>
+      <div class="photo-spot"><p class="photo-spot-name">Santo Domingo Overlook</p><p class="photo-spot-tip">The entire valley laid out below. The best panoramic of the city. Morning light preferred.</p></div>
+    </div>
+
+    <div class="route-map-wrap fade-in">
+      <p class="card-label" style="margin-bottom:16px">🗺 Today's Route</p>
+      <div id="map-day4" class="route-map">
+        <iframe src="https://www.google.com/maps/dir/Heiss+Hotel,+Medell%C3%ADn/Plaza+Botero,+Medell%C3%ADn/Metrocable+Santo+Domingo,+Medell%C3%ADn/Heiss+Hotel,+Medell%C3%ADn/La+Causa,+El+Poblado,+Medell%C3%ADn/Jos%C3%A9+Mar%C3%ADa+C%C3%B3rdova+International+Airport/@6.23,-75.52,12z" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PACKING ===== -->
+<section class="packing">
+  <div class="container" style="text-align:center">
+    <p class="section-tag fade-in">Don't Forget</p>
+    <h2 class="fade-in" style="font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:700;margin-bottom:40px">The Packing Edit</h2>
+    <div class="packing-list">
+      <div class="packing-item fade-in"><div class="packing-check">✓</div><p>Compact umbrella &amp; light rain jacket</p></div>
+      <div class="packing-item fade-in"><div class="packing-check">✓</div><p>Comfortable walking shoes with grip</p></div>
+      <div class="packing-item fade-in"><div class="packing-check">✓</div><p>Sunscreen SPF 50 &amp; sunglasses</p></div>
+      <div class="packing-item fade-in"><div class="packing-check">✓</div><p>Light layers for mountain evenings</p></div>
+      <div class="packing-item fade-in"><div class="packing-check">✓</div><p>Gold jewelry — it pops against everything here</p></div>
+      <div class="packing-item fade-in"><div class="packing-check">✓</div><p>Portable charger &amp; camera</p></div>
+      <div class="packing-item fade-in"><div class="packing-check">✓</div><p>Swimwear for the hotel pool &amp; spa</p></div>
+      <div class="packing-item fade-in"><div class="packing-check">✓</div><p>A bold lip color for dinner photos</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CLOSING ===== -->
+<section class="closing">
+  <div class="closing-glow"></div>
+  <div class="closing-inner fade-in">
+    <p class="section-tag" style="margin-bottom:24px">See You There</p>
+    <h2>This Is Going to<br>Be Unforgettable.</h2>
+    <div class="closing-line"></div>
+    <p class="closing-sub">Coffee. Color. Mountains.<br>And the best company.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Made with intention — Medellín 2026</p>
+</footer>
+
+<!-- ===== SCROLL ANIMATION SCRIPT ===== -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var parent = entry.target.parentElement;
+        if (parent) {
+          var siblings = Array.from(parent.querySelectorAll('.fade-in'));
+          var idx = siblings.indexOf(entry.target);
+          entry.target.style.transitionDelay = (idx * 0.08) + 's';
+        }
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+});
+</script>
+</body>
+</html>
